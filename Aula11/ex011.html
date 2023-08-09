@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você é Brasileiro?</h1>
+    <h2>Teste para saber se você é brasileiro</h2>
+    <p>Digite o pais que você mora: <input type="text" name="pais" id="paisx"></p>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="resultado">
+    </div>
+
+    <script>
+        function verificar() {
+            var pais = window.document.getElementById('paisx')
+            var res = window.document.getElementById('resultado')
+            res.innerHTML = `<p>Vivendo no(a) ${pais.value}</p>`
+            if (pais.value == 'brasil' || pais.value == 'Brasil') {
+                res.innerHTML += '<p>Você é Brasileiro</p>'
+            } else {
+                res.innerHTML += '<p>Você é Estrangeiro</p>'
+            }
+        }
+    </script>
+</body>
+</html>

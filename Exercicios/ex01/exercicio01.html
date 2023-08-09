@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do Dia</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 20px;
+        }
+
+        h1 {
+            color: white;
+        }
+        article {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+        }
+
+        #img {
+            width: 250px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        #texto {
+            padding-top: 30px;
+        }
+
+        footer {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Hora do dia</h1>
+        <article>
+            <div id="texto">
+            </div>
+
+            <div id="imagem">
+                <img src="Imagens/Dia.jpg" alt="" id="img">
+            </div>
+        </article>
+        <footer>
+            <p>&copy; CursoemVideo</p>
+        </footer>
+    </main>
+
+    <script>
+        var agora = new Date()
+        var hora = agora.getHours()
+        if (hora < 12) {
+            var fundo = window.document.body
+            fundo.style.backgroundColor = '#6D8C8C'
+            var txt = window.document.getElementById("texto")
+            txt.innerHTML += `Agora são ${hora} horas`
+            var imagem = window.document.getElementById('img')
+            imagem.setAttribute ('src', 'Imagens/Dia.jpg')
+        } else if (hora < 18) {
+            var fundo = window.document.body
+            fundo.style.backgroundColor = 'rgb(127, 62, 6)'
+            var txt = window.document.getElementById("texto")
+            txt.innerHTML += `Agora são ${hora} horas`
+            var imagem = window.document.getElementById('img')
+            imagem.setAttribute ('src', 'Imagens/tarde.jpg')
+        } else {
+            var fundo = window.document.body
+            fundo.style.backgroundColor = '#171C26'
+            var txt = window.document.getElementById("texto")
+            txt.innerHTML += `Agora são ${hora} horas`
+            var imagem = window.document.getElementById('img')
+            imagem.setAttribute ('src', 'Imagens/noite.jpg')
+        }
+    </script>
+</body>
+</html>
