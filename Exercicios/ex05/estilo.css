@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(70, 142, 236);
+    font: normal 15pt arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.353);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+#tabn {
+    width: 200px;
+}
+
+.botao {
+    width: 100px;
+    padding: 3px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.268);
+}
+
+.botao:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    transform: translate(2px, 2px);
+}

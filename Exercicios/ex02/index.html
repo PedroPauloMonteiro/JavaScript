@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Verificador de Idade</h1>
+        <article>
+            <div>
+                <label for="nasc">Ano de nascimento: </label> <input type="number" name="nasc" id="nasc" required>
+            </div>
+
+           <div>
+               Sexo: <label for="fem">Feminino</label><input type="radio" name="sexo" id="fem" value="Feminino" >
+               <label for="masc">Masculino</label><input type="radio" name="sexo" id="masc" value="Masculino">
+           </div>
+           <input type="button" value="Verificar" id="bot" onclick="verificar()">
+           
+           <div id="resultado">
+               <p id="result">Preencha os dados acima para ver o resultado!</p>
+                <div id="block-img">
+                </div>
+           </div>
+        </article>
+    </main>
+    <footer>
+        <p>&copy;CursoemVideo</p>
+    </footer>
+
+    <script>       
+
+       function verificar() {
+            var nasc = document.getElementById('nasc')
+            nasc = Number(nasc.value)
+            var atual = new Date()
+            var anoatual = atual.getFullYear()
+            if (nasc > anoatual || nasc <= 0) {
+                window.alert("Ano de Nascimento Invalido!")
+                return
+            } else {
+                var idade = anoatual - nasc
+            }
+            var genero = document.querySelector('input[name="sexo"]:checked').value
+            var resposta = document.getElementById('result')
+            if (genero == "Masculino") {
+                resposta.innerHTML = (`Detectamos um Homem de ${idade} anos!`)
+            } else if (genero == "Feminino") {
+                resposta.innerHTML = (`Detectamos uma Mulher de ${idade} anos!`)
+            } else {
+                window.alert("PREENCHA TODOS OS DADOS!")
+                return
+            }
+
+            var imagem = document.createElement('img')
+            if (genero == "Masculino" && idade < 11) {
+                imagem.src =  "Imagens/homem-crianca.jpg"
+            } else if (idade > 11 && idade < 21) {
+                imagem.src = "Imagens/homem-adolescente.jpg"
+            } else if (idade < 60) {
+                imagem.src = "Imagens/homem-adulto.jpg"
+            } else if (idade >= 60 && genero == "Masculino") {
+                imagem.src = "Imagens/homem-idoso.jpg"
+            }   
+
+            if (genero == "Feminino" && idade < 11) {
+                imagem.src =  "Imagens/mulher-crianca.jpg"
+            } else if (genero == "Feminino" && idade < 21) {
+                imagem.src =  "Imagens/mulher-adolescente.jpg"
+            } else if (genero == "Feminino" && idade < 60) {
+                imagem.src =  "Imagens/mulher-adulta.jpg"
+            } else if (genero == "Feminino" && idade >= 60)  {
+                imagem.src =  "Imagens/mulher-idosa.jpg"
+            }
+
+
+            imagem.classList.add("imagem-estilizada")
+            var conteinerimg = document.getElementById('block-img')
+            conteinerimg.innerHTML = ""
+            document.getElementById("block-img").appendChild(imagem)
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <Header>
+        <h1>Vamos Contar</h1>
+    </Header>
+
+    <section>
+        <div>
+            <p>
+                <label for="ini">Inicio:</label>
+                <input type="number" name="ini" id="ini">
+            </p>
+
+
+            <p>
+                <label for="fim">Fim:</label>
+                <input type="number" name="fim" id="fim">
+            </p>
+
+            <p>
+                <label for="pas">Passo:</label>
+                <input type="number" name="pas" id="pas">
+            </p>
+
+            <input type="button" value="Contar" onclick="contar()">
+        
+        </div>
+            
+        <div id="bloco-contagem">
+            <p id="mensagem">Preparando a Contagem...</p>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy;CursoemVideo</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
